@@ -1,11 +1,11 @@
 ##ng-Cordova-FileHelper
 An angular module for cordova [File]() and [FileTransfer]() plugin.
 
-##Install
+#Install
 
 ##Document
 
-###getEntryByPath(`String` filePath)
+####getEntryByPath(`String` filePath)
 ```coffee
 CDVFileHelper.getEntryByPath('file:///some/path/to/file.name').then(
   (fileEntry)->
