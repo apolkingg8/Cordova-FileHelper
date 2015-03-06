@@ -1,7 +1,7 @@
-##ng-Cordova-FileHelper
+#ng-Cordova-FileHelper
 An angular module for cordova [File]() and [FileTransfer]() plugin.
 
-#Install
+##Install
 
 ##Document
 
