@@ -60,6 +60,14 @@ fn.getStaticDirEntry(cordova.file.documentsDirectory).then(
 )
 ```
 
+####getFileSystem()
+
+
+
+####getStorageQuoda()
+
+
+
 ####getEntryByPath(`String`path)
 Get file or dir entry by path.
 ```js
@@ -113,6 +121,9 @@ fh.remove(fileOrDirEntryObject).then(
 ```
 
 ####getName()
+
+
+####getMetadata()
 
 
 ####getDirSize(dir)
