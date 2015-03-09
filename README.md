@@ -1,27 +1,35 @@
-#ng-Cordova-FileHelper(working)
-An angular module for cordova [File]() and [FileTransfer]() plugin.
+#Cordova-FileHelper(still on working)
+A class for cordova [File](https://github.com/apache/cordova-plugin-file) and [FileTransfer]() plugin.
 
-##Install
+##Dependency
+This project dependence on [kriskowal's Q Promise](https://github.com/kriskowal/q), that solves the callback hell issue.
+
+
+##Installation
+
+`bower install `
 
 ##Document
 
-#####getAppDir()
-Get entry by`cordova.file.applicationDirectory`. Read-only directory where the application is installed
+###Initialize
+
 ```coffee
-CDVFileHelper.getAppDir().then(
-  (appDirEntry)->
-    # resolve with app dir entry
-  (err)->
-    # reject with CDV err object
-)
+fh = new CDVFileHelper({
+    cordovaNameSpace: 'cordova' # cordova plugin name space
+    cache: true # cache some static dir entries in memory
+    initStaticDir: false # get static dir entries when init CDVFileHelper
+})
 ```
 
-#####getAppStorageDir()
-Get entry by `cordova.file.applicationStorageDirectory`. Root directory of the application's sandbox; on iOS this location is read-only (but specific subdirectories [like /Documents] are read-write). All data contained within is private to the app. ( iOS, Android, BlackBerry 10)
+###Method
+
+#####getStaticDirEntry(cordova.file.*)
+Get static dir entries. You can check [Cordova File Plugin - File System Layout](https://github.com/apache/cordova-plugin-file/blob/master/doc/index.md#file-system-layouts) for more information.
+
 ```coffee
-CDVFileHelper.getAppStorageDir().then(
-  (appDirEntry)->
-    # resolve with app dir entry
+fn.getStaticDirEntry(cordova.file.documentsDirectory).then(
+  (appDocumentsDirEntry)->
+    # resolve with app's documents dir entry
   (err)->
     # reject with CDV err object
 )
@@ -30,7 +38,7 @@ CDVFileHelper.getAppStorageDir().then(
 #####getEntryByPath(`String`path)
 Get file or dir entry by path.
 ```coffee
-CDVFileHelper.getEntryByPath('file:///path/to/target').then(
+fh.getEntryByPath('file:///path/to/target').then(
   (fileEntry)->
     # resolve with file entry object
   (err)->
@@ -38,23 +46,11 @@ CDVFileHelper.getEntryByPath('file:///path/to/target').then(
 )
 ```
 
-####upload(soruce, target)
-Upload file in device.
-
-`source`
-
-
-
-####download
-Download file to device.
-
-
-
 #####removeEntry(`String`path || `Object`entry)
 Delete file or dir in device.
 ```coffee
 # by path
-CDVFileHelper.removeEntry('file:///path/to/target').then(
+fh.removeEntry('file:///path/to/target').then(
   ()->
     # resolve with empty
   (err)->  
@@ -62,10 +58,27 @@ CDVFileHelper.removeEntry('file:///path/to/target').then(
 )
 
 #by entry
-CDVFileHelper.removeEntry(fileOrDirEntryObject).then(
+fh.removeEntry(fileOrDirEntryObject).then(
   ()->
     # resolve with empty
   (err)->  
     # reject with CDV err object
 )
 ```
+
+####upload(soruce, target)
+Upload file in device.
+
+**soruce**  
+  `String`  file path string.  
+  `Object`  file entry object.
+
+**target**  
+  `String`  target url string.
+
+```coffee
+```
+
+
+####download
+Download file to device.
