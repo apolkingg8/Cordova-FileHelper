@@ -1,0 +1,20 @@
+{
+  "name": "Cordova-FileHelper",
+  "version": "0.0.0",
+  "homepage": "https://github.com/apolkingg8/ng-Cordova-FileHelper",
+  "authors": [
+    "EijiHsu <apolkingg8@gmail.com>"
+  ],
+  "dependencies": {
+    "q": ">1.0.1"
+  },
+  "description": "Helper tools for Cordova file and file-transfer plugin.",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
