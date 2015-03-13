@@ -1,0 +1,1 @@
+{"version":3,"file":"main.js","sourceRoot":"","sources":["main.ts"],"names":["CDVFileHelper","CDVFileHelper.constructor"],"mappings":"AAAA,4CAA4C;AAc5C,IAAM,aAAa;IACfA,SADEA,aAAaA,CACHA,MAAcA;IAE1BC,CAACA;IAiCLD,oBAACA;AAADA,CAACA,AApCD,IAoCC;AAED,aAAa,CAAC,SAAS,CAAC,iBAAiB,GAAG,UAAU,qBAA6B;AAEnF,CAAC,CAAC"}
