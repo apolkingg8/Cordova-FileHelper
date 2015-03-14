@@ -43,7 +43,7 @@ CDVFileHelper.prototype.getFileSystem = function (type, size) {
     });
     return defer.promise;
 };
-CDVFileHelper.prototype.getStorageQuota = function (type, size) {
+CDVFileHelper.prototype.requestStorageQuota = function (type, size) {
     var defer = Q.defer();
     var successCallback = function (grantedBytes) {
         defer.resolve(grantedBytes);

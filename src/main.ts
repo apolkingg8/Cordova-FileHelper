@@ -11,7 +11,7 @@ class CDVFileHelper {
 
     getFileSystem: Function;
 
-    getStorageQuota: Function;
+    requestStorageQuota: Function;
 
     getEntryByPath: Function;
 
@@ -93,7 +93,7 @@ CDVFileHelper.prototype.getFileSystem = function (type: number, size: number) {
     return defer.promise;
 };
 
-CDVFileHelper.prototype.getStorageQuota = function (type: number, size: number) {
+CDVFileHelper.prototype.requestStorageQuota = function (type: number, size: number) {
 
     var defer = Q.defer();
 
